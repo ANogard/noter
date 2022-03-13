@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  app:
+    image: 'noter:0.0.1'
+    ports:
+    - "8080:8080"
+    build:
+      context: .
+    container_name: noter
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  postgres:
+      image: 'postgres:14.2-alpine'
+      ports:
+        - "5432:5432"
+      container_name: postgres
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=123
+        - POSTGRES_DB=postgres
