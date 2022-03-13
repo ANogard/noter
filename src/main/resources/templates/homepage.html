@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <meta charset="UTF-8">
+  <title>Главная - Noter</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+  <div th:insert="menu :: menu" class="menu"></div>
+</head>
+<body>
+<h1 sec:authorize="isAnonymous()">NOTER</h1>
+<h1 sec:authorize="isAuthenticated()">Всего заметок: <span th:text="${count}"/></h1>
+</body>
+</html>

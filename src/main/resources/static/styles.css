@@ -1,0 +1,62 @@
+body{
+  font-family: sans-serif;
+}
+ul{
+  list-style: none;
+}
+li{
+  display: inline;
+}
+li a{
+      font-size: 1.2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0 0.4em;
+      text-decoration: none;
+      background: none;
+      border: none;
+      color: #464646;
+}
+.menu form{
+  display: inline;
+}
+.logout{
+      font-size: 1.2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0 0.4em;
+      text-decoration: none;
+      background: none;
+      border: none;
+      color: #464646;
+}
+.visible{
+  display:block;
+}
+.hidden{
+  display:none;
+}
+.error{
+  color: red;
+}
+.note{
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+.note .date{font-style: italic;}
+.note p{}
+.form {
+  width: 30%;
+}
+.form input{
+  padding: 0.5em 1em;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.form button{
+    display: block;
+    font-size: 1em;
+    padding: 0.2em 2em;
+    margin: auto;
+}

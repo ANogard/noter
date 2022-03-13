@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+  <title>Список заметок - Noter</title>
+  <div th:insert="menu :: menu" class="menu"></div>
+</head>
+<body>
+<h1>Заметки</h1>
+<div class="note" th:each="note : ${notes}">
+  <h3 class="date" th:text="${note.date}"></h3>
+  <p th:text="${note.text}"></p>
+  <h3 th:text="${note.owner}"></h3>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>Регистрация - Noter</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+  <div th:insert="menu :: menu" class="menu"></div>
+</head>
+<body>
+<p th:if="${userExists}" class="error">Такой пользователь уже зарегистрирован!</p>
+<p th:if="${passwordError}" class="error">Пароли не совпадают!</p>
+<form th:action="@{/registration}" method="post">
+  <div><label> Email : <input type="text" name="username"/> </label></div>
+  <div><label> Пароль: <input type="password" name="password"/> </label></div>
+  <div><label> Повторите пароль: <input type="password" name="passwordRepeat"/> </label></div>
+  <div><input type="submit" value="Sign up"/></div>
+</form>
+</body>
+</html>

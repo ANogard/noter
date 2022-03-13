@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+  <title>Создать заметку - Noter</title>
+  <div th:insert="menu :: menu" class="menu"></div>
+</head>
+<body>
+<div class="error" th:classappend="${isVisible} ? visible : hidden">
+  <h2>Заметка не может быть пустой!</h2>
+</div>
+<div class="form">
+  <h1>Создать новую заметку</h1>
+  <form th:action="@{/new}" method="post">
+    <input type="text" name="text" value="" placeholder="Введите тут текст заметки">
+    <button id="submit">Сохранить</button>
+  </form>
+</div>
+</body>
+</html>
